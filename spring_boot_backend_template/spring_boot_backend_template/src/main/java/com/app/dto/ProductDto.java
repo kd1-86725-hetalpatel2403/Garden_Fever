@@ -1,12 +1,14 @@
 package com.app.dto;
 
+
+
+import java.sql.Blob;
+
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,7 +17,7 @@ public class ProductDto {
 	private int product_id;
     private String product_name;
     private double product_price;
-    private String product_imageName;
+    private Blob product_imageName;
     private int product_quantity;
     private boolean stock = true;
     private boolean live;
