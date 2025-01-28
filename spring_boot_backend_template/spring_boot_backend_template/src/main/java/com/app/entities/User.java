@@ -1,11 +1,8 @@
 package com.app.entities;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -19,7 +16,6 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.Value;
 
 
 @Entity
@@ -51,7 +47,8 @@ public class User{
 
     @Column(nullable = false)
     private String phone;
-
+    
+    
     @Column(name = "CreateAt",nullable = false)
     private Date date;
 
@@ -60,65 +57,10 @@ public class User{
     @OneToOne(mappedBy = "user")
     private Cart cart;
 
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private Set<Role> role = new HashSet<>();
+    private Role role;
     
     
+    
 
     
-//    @Override
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        List<SimpleGrantedAuthority> collect = this.role.stream()
-//                .map(role -> new SimpleGrantedAuthority(role.getRoleName()))
-//                .collect(Collectors.toList());
-//
-//        return collect;
-//    }
-
-
-
-
-//	@Override
-//	public String getUsername() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//
-//
-//
-//	@Override
-//	public boolean isAccountNonExpired() {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//
-//
-//
-//	@Override
-//	public boolean isAccountNonLocked() {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//
-//
-//
-//	@Override
-//	public boolean isCredentialsNonExpired() {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//
-//
-//
-//	@Override
-//	public boolean isEnabled() {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//	
-
 }

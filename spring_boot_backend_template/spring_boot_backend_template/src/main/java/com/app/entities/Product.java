@@ -1,5 +1,7 @@
 package com.app.entities;
 
+import java.sql.Blob;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -21,7 +23,7 @@ public class Product {
 	
 	private String product_name;
 	private double product_price;
-	private String product_imageName;
+	private Blob product_imageName;
 	private int product_quantity;
 	private boolean stock = true;
 	private boolean live;
